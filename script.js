@@ -41,8 +41,22 @@ const getPokemons = async (num) => {
 		const poke_number = `# ${pokeData.id.toString().padStart(3, 0)}`   // lo pasa a string 001
 		const poke_name = pokeData.name
 		const poke_type = pokeData.types[0].type.name
-		const poke_image = pokeData.sprites.other['official-artwork']['front-default']  // es con [] no puede haber guiones 
-		console.log(poke_number, poke_name,poke_type);
+		const poke_image = pokeData.sprites.other['official-artwork'].front_default  // es con [] no puede haber guiones 
+		console.log(poke_number, poke_name,poke_type,poke_image);
+		
+		const createPokemonCard =
+		` <div class="pokemon" style="background-color: ${colors[poke_type]};">
+		  <div class="img-container">
+				<img src="${poke_image}" alt="${poke_name}">
+ 			</div>
+ 			<div class="info">
+ 				<span class="number">${poke_number}</span>
+ 				<h3 class="name">${poke_name}</h3>
+ 				<small class="type">Type: <span>${poke_type}</span></small>
+ 			</div>
+ 		</div>`
+		poke_container.innerHTML += createPokemonCard;
+
 	}
 }
 

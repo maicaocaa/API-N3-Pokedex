@@ -17,34 +17,3 @@ const colors = {
 	normal: '#F5F5F5'
 }
 
-
-// 1 definir funcion asincrona
-//elegir el endpoint
-
-function getPokemons() {
-	const endPoint = "https://pokeapi.co/api/v2/pokemon/"
-	let response = fetch(endPoint);
-	return response
-	};
-
-
-
-
-
-
-console.log( getPokemons());
-
-// const createPokemonCard =
-// 		` <div class="pokemon" style="background-color: rgb(222,253,224);">
-// 			<div class="img-container">
-// 				<img src="" alt="Bulbasaur">
-// 			</div>
-// 			<div class="info">
-// 				<span class="number">001</span>
-// 				<h3 class="name">Bulbasaur</h3>
-// 				<small class="type">Type: <span>grass</span></small>
-// 			</div>
-// 		</div>`
-		
-// charactersContainer.innerHTML += createPokemonCard;
-
